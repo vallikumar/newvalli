@@ -1,0 +1,50 @@
+<form #sectwoaForm="ngForm" class="editForm" novalidate>
+  <div class="form-horizontal">
+      <div class="tab-pane fade in active">
+          <h4 class="head text-center">{{title}}</h4>
+          <br/>
+          <div class='row worker-select'>
+              <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                  <div class="form-group">
+
+                          <div class="col-xs-7">
+                                  <label class="float-md-left" for="dashboardTrending">d. WebView Logbook Report</label> </div>
+                                  <div class="col-xs-5">
+                                      <span class="float-md-right"><input type="radio" value="yes" name="wlr" [(ngModel)]="wlr"> Yes
+                                        &nbsp; &nbsp;<input type="radio" value="no" name="wlr" [(ngModel)]="wlr"> No
+                                        &nbsp; &nbsp;<input type="radio" value="na" name="wlr" [(ngModel)]="wlr"> N/A</span>
+                                          <app-yes-text></app-yes-text>
+                                          <input type="text" class="form-control" id="name" required> 
+                              </div>
+
+                              <div class="col-xs-7">
+                                      <label class="control-label" for="dashboardTrending">e. EMS Trending Data
+                                          </label> </div>
+                                          <div class="col-xs-5">
+                                          <input type="radio" value="yes" name="etd" [(ngModel)]="etd"> Yes
+                                          &nbsp; &nbsp; <input type="radio" value="no" name="etd" [(ngModel)]="etd"> No
+                                              &nbsp; &nbsp;<input type="radio" value="na" name="etd" [(ngModel)]="etd"> N/A
+                                              <app-yes-text></app-yes-text>
+                                              <input type="text" class="form-control" id="name" required> 
+                                  </div>
+
+                                  <div class="col-xs-7">
+                                          <label class="control-label" for="dashboardTrending">f. JCI Trending Data
+                                              </label> </div>
+                                              <div class="col-xs-5">
+                                              <input type="radio" value="yes" name="jtd" [(ngModel)]="jtd"> Yes
+                                              &nbsp; &nbsp;  <input type="radio" value="no" name="jtd" [(ngModel)]="jtd"> No
+                                              &nbsp; &nbsp; <input type="radio" value="na" name="jtd" [(ngModel)]="jtd"> N/A
+                                                  <app-yes-text></app-yes-text>
+                                                  <input type="text" class="form-control" id="name" required> 
+                                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group text-center space-20">
+              <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(sectwoaForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+              <button class="btn btn-outline-rounded btn-info" [disabled]="!sectwoaForm.valid" (click)="goToNext(sectwoaForm)">  Save & Continue <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+          </div>
+      </div>
+  </div>
+</form>

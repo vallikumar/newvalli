@@ -1,0 +1,135 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+
+<form #generalForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+
+                <div class="row worker-select">
+                    <!-- <label class="control-label" for="reportedBy">a. Reported By</label> -->
+                    <div class="col-xs-5">
+                        <!-- {{text}} -->
+                        <label class="control-label" for="reportedby">a. Reported By</label>
+                    </div>
+
+                    <div class="col-xs-5">
+                        <!-- <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="general.firstName">    -->
+                        <p-dropdown [style]="{'width': '95%'}" [options]="reporters" #reportedBy="ngModel" [(ngModel)]="general.reportedBy" required
+                            id="reportedby" name="reportedBy" placeholder="Select a value from Dropdown" optionLabel="name"
+                            [showClear]="true"></p-dropdown>
+
+
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="row worker-select">
+                    <div class="col-xs-5">
+                        <label class="control-label" for="facility">b. Facility Name</label>
+                    </div>
+                    <div class="col-xs-5">
+                        <p-dropdown [style]="{'width': '95%'}" [options]="facilities" #facility="ngModel" [(ngModel)]="general.facility" required
+                            id="facility" name="facility" placeholder="Select a value from Dropdown" optionLabel="name" [showClear]="true"></p-dropdown>
+                    </div>
+                </div>
+                <br />
+                <div class="row worker-select">
+                    <div class="col-xs-5">
+                        <label class="control-label" for="coverageDate"> c. Coverage Date(s) and Time </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <p-calendar [(ngModel)]="general.covStartDate" #covStartDate="ngModel" required id="covstartDate" [showTime]="true"
+                            [showIcon]="true" [defaultDate]="" icon="glyphicon glyphicon-time" name="covStartDate"
+                            hourFormat="24"></p-calendar>
+                    </div>
+                    <div class="col-xs-3">
+                        <p-calendar [(ngModel)]="general.covEndDate" #covEndDate="ngModel" [showTime]="true" name="covEndDate" required id="covendDate" 
+                        [defaultDate]="" [showIcon]="true"  icon="glyphicon glyphicon-time" hourFormat="24">
+                            <span class="glyphicon glyphicon-align-left" aria-hidden=""></span>
+                        </p-calendar>
+                    </div>
+                </div>
+                <br />
+                <div class="row worker-select">
+                    <div class="col-xs-5">
+                        <label class="control-label" for="reportDate" style="float: left;">d. Report Date</label>
+                    </div>
+
+                    <div class="col-xs-5">
+                        <!-- <div class="ui-g-12 ui-md-4"> -->
+                        <p-calendar #repDate="ngModel" [(ngModel)]="general.repDate"  required id="repDate" [showIcon]="true" name="repDate" [defaultDate]="defaultDate"></p-calendar>
+                        <!-- </div> -->
+
+                    </div>
+                </div>
+                <br />
+                <div class="row worker-select">
+                    <div class="col-xs-5">
+                        <label class="control-label" for="schConfirm">e. Scheduled Activities</label>
+                    </div>
+                    <div class="col-xs-7">
+                        <input type="radio" value="yes" name="schConfirm" [(ngModel)]="general.schConfirm" [checked]="schConfirm"/> Yes 
+                        <input type="radio" value="no" name="schConfirm" [(ngModel)]="general.schConfirm"  [checked]="!schConfirm"/> No
+                        <br />
+                    </div>
+                    <br/>
+                    <!-- <span class="float-md-left">If Yes: </span>
+                        <span style="float:right; margin-top:-1px;">
+                            <p-dropdown [options]="activities" [(ngModel)]="scheduledActivities" name="scheduledActivities" placeholder="Select a Value" optionLabel="name" [showClear]="true"></p-dropdown>
+                        </span><br/> -->
+
+
+                    <!-- </div> -->
+                </div>
+                <div class="row worker-select">
+                    <br/>
+                </div>
+                <div *ngIf="general.schConfirm === 'yes'" class="row worker-select">
+                    <div class="col-xs-5">
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="float-md-left">If Yes: </span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span style="float:right; margin-top:-1px;">
+                               
+                            <p-dropdown [options]="activities" #activity="ngModel"[(ngModel)]="general.activity" name="activity" placeholder="Select a Value"
+                                optionLabel="name" [showClear]="true"></p-dropdown>
+                        </span>
+                        <br/>
+                    </div>
+                </div>
+                <div *ngIf="general.schConfirm === 'no'" class="row worker-select">
+                </div>
+                <div class="row worker-select">
+                        <br/>
+                </div>
+                <div *ngIf="general.activity.name === 'other'" class="row worker-select">
+                    <div class="col-xs-5">
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="float-md-left">If Other, explain: </span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span>
+                            <textarea style="width:99%;" ng-model="myTextarea"></textarea>
+                        </span>
+                    </div>
+                </div>
+                <br/>
+
+
+                <div class="form-group text-center">
+                    <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!generalForm.valid" (click)="goToNext(generalForm)">
+                    Save & Continue
+                        <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

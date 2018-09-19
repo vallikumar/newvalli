@@ -1,0 +1,10 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle " type="button" data-toggle="dropdown">
+      {{buttonText}}
+    </button>
+    <ul class="dropdown-menu" role="menu" >
+      <li *ngFor="let reporter of fields" (click)="onChange(reporter)">{{reporter.name}}</li>
+    </ul>
+      
+
+  </div>

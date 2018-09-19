@@ -1,0 +1,62 @@
+  <div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+        <div class="liner"></div>
+        <li>
+            <a routerLink="/general" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION I: GENERAL INFORMATION">
+                <span class="round-tabs one">
+                    <i class="glyphicon glyphicon-home"></i>
+                </span>
+            </a>
+        </li>
+        
+
+         <li>
+            <a routerLink="/work" routerLinkActive="active" data-toggle="tab" title="Section II: COVERAGE DATE(S) DATA COLLECTION">
+              <a routerLink="/sectwoa" routerLinkActive="active" data-toggle="tab" title="Section II: COVERAGE DATE(S) DATA COLLECTION">
+                <span class="round-tabs two">
+                    <i class="glyphicon glyphicon-pause"></i>
+                </span> 
+                </a>
+            </a>
+        </li>
+        <li>
+          <a routerLink="/address" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION III: DATA ANALYSIS/FINDINGS SUMMARY">
+            <a routerLink="/secthreealarm" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION III:a">
+              <a routerLink="/secthreemtd" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION III: b">
+                <a routerLink="/secthreesafety" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION III:c">
+                  <a routerLink="/secthreeoth" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="SECTION III: DATA ANALYSIS/FINDINGS SUMMARY">
+              <span class="round-tabs three">
+                  <i class="glyphicon glyphicon-tasks"></i>
+              </span>
+          </a></a></a></a>
+            </a>
+      </li>
+      <li>
+        <a routerLink="/secfour" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="Section IV: Follow Up">
+            <span class="round-tabs four">
+                <i class="glyphicon glyphicon-list"></i>
+            </span>
+        </a>
+    </li>
+        <li>
+            <a routerLink="/secfive" routerLinkActive="active" data-toggle="tab" title="Section V: Attachments">
+                <span class="round-tabs five">
+                    <i class="glyphicon glyphicon-folder-open
+                    "></i>
+                </span>
+            </a>
+        </li>
+
+        <li>
+            <a routerLink="/result" routerLinkActive="active" data-toggle="tab" title="Review">
+                <span class="round-tabs six">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Close the Splash screen -->
+<script src="assets/js/loading-bars.js"></script>

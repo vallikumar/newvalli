@@ -1,0 +1,47 @@
+<form #secfiveForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                <div class="row worker-select">
+                        <div class="col-xs-4"><label class="control-label" for="reportedBy">a. Trending Data / Plot: </label> </div>
+                        <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">b. System Discrepancy / Deviation SD Form:</label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">c. System Discrepancy / Deviation SD Log: </label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">d. Corrective Action / Preventative Action (CAPA): </label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">e. Root Cause Analysis (RCA): </label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">f. Work Plan (WP): </label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <div class="col-xs-4"><label class="control-label" for="reportedBy">g. Others: </label> </div>
+                                <div class="col-xs-8"> <app-fileuplaoder></app-fileuplaoder></div>
+                </div><br/>
+                <div class="row worker-select">
+                                <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                        </div><br/>
+        </div>
+        </div>
+               <br/>
+                    
+                <div class="form-group text-center">
+                        <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(secfiveForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                        <button class="btn btn-outline-rounded btn-info" [disabled]="!secfiveForm.valid" (click)="goToNext(secfiveForm)">  Save & Continue <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+</form>

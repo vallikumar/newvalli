@@ -1,0 +1,51 @@
+<form #workForm="ngForm" class="editForm" novalidate>
+    <div class="form-horizontal">
+        <div class="tab-pane fade in active">
+            <h4 class="head text-center">{{title}}</h4>
+            <br/>
+            <div class='row worker-select'>
+                <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                    <div class="form-group">
+
+                            <div class="col-xs-7">
+                                    <label class="float-md-left" for="dashboardTrending">a. PI Dashboard Trending</label>  </div>
+                                    <div class="col-xs-5"> 
+                                        <span class="float-md-right"><input type="radio" value="yes" name="pdt" [(ngModel)]="pdt"> Yes
+                                            &nbsp; &nbsp;<input type="radio" value="no" name="pdt" [(ngModel)]="pdt"> No
+                                            &nbsp; &nbsp;<input type="radio" value="na" name="pdt" [(ngModel)]="pdt"> N/A</span>
+                                            <app-yes-text></app-yes-text>
+                                            <input type="text" class="form-control" id="name" required> 
+                                </div><br />
+
+                                <div class="col-xs-7">
+                                        <label class="control-label" for="dashboardTrending">b. Siemens System Activity Log (SAL)
+                                            </label>  </div>
+                                            <div class="col-xs-5"> 
+                                            <input type="radio" value="yes" name="sal" [(ngModel)]="sal"> Yes
+                                            &nbsp; &nbsp; <input type="radio" value="no" name="sal" [(ngModel)]="sal"> No
+                                                &nbsp; &nbsp;<input type="radio" value="na" name="sal" [(ngModel)]="sal"> N/A
+                                                <app-yes-text></app-yes-text>
+                                                <input type="text" class="form-control" id="name" required> 
+                                    </div><br />
+
+                                    <div class="col-xs-7">
+                                            <label class="control-label" for="dashboardTrending">c. Siemens Trending Data
+
+                                                </label>  </div>
+                                                <div class="col-xs-5"> 
+                                                <input type="radio" value="yes" name="std" [(ngModel)]="std"> Yes
+                                                &nbsp; &nbsp;<input type="radio" value="no" name="std" [(ngModel)]="std"> No
+                                                    &nbsp; &nbsp;<input type="radio" value="na" name="std" [(ngModel)]="std"> N/A
+                                                    <app-yes-text></app-yes-text>
+                                                    <input type="text" class="form-control" id="name" required> 
+                                        </div><br />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-center space-20">
+                <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)">  Save & Continue <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,124 @@
+.mainSection{
+   background:#efefe9;
+   margin-bottom: 40px;
+}
+/* .container {
+    padding-bottom: 100px;
+} */
+ .btn-default {
+    border-color: #ccc;
+    margin: 20px 10px 0 10px;
+}
+
+.tab-content .choice {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 38px;
+}
+
+.tab-content .choice i {
+    font-size: 32px;
+    line-height: 55px;
+}
+
+.btn-radio {
+	width: 100%;
+}
+.img-radio {
+	opacity: 0.8;
+	margin-bottom: 5px;
+}
+
+.space-20 {
+    margin-top: 20px;
+}
+
+/* active buttons */
+#status-buttons a.active span.round-tabs.one { 
+    background: rgb(255, 60, 35); 
+    color: #fff
+}
+
+#status-buttons a.active span.round-tabs.three { 
+    background: #febe29; 
+    color: #fff;
+}
+
+#status-buttons a.active span.round-tabs.two { 
+    background: #3e5e9a; 
+    color: #fff
+}
+
+#status-buttons a.active span.round-tabs.four { 
+    background:  #40b9e9;
+    color: #fff;
+}
+#status-buttons a.active span.round-tabs.five { 
+    background: #f1685e; 
+    color: #fff
+}
+#status-buttons a.active span.round-tabs.six { 
+    background: rgb(34, 194, 34);
+    color: #fff
+}
+
+
+.iradio_buttons {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: #febe29 no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.iradio_buttons {
+    background-position: -120px 0;
+}
+.iradio_buttons.hover {
+    background-position: -144px 0;
+}
+.iradio_buttons.checked {
+    background-position: -168px 0;
+}
+#footer{
+    border-top: solid 2px #b3172c;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position:fixed;
+    bottom:-20px;
+    width: 100%;
+    /* margin-bottom: 0; */
+}
+/* .navbar-inverse{
+    margin-bottom: -20px !important;
+} */
+#header{
+    border-top: solid 5px #b3172c;
+}
+#formula-container {
+    background-color: #b3172c;
+}
+/* @media (min-width: 1024px) */
+.header-logo {
+    display: block;
+}
+.header-title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #b3172c;
+}
+#main-header h2 {
+    margin-top: 0;
+}
+.header-subtitle {
+    font-size: 2rem;
+}
+img {
+    vertical-align: middle;
+}
+#header .header-logo {
+    margin-top: 1.5em;
+}

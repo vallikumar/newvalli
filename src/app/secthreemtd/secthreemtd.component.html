@@ -1,0 +1,68 @@
+<form  #secthreemtdForm="ngForm" [formGroup]="survey"  class="editForm" novalidate>
+        <div class="tab-pane fade in active">
+                <h4 class="head text-center">{{title}}</h4>
+                <br/>
+                <div class='row'>
+                        <div class='col-xs-offset-1 col-xs-16 col-sm-offset-2 col-sm-8'>
+                            <div class="row worker-select"><h4>b. Missing Trending Data:</h4></div>
+                            <div formArrayName="sections">
+                                <div class="section-container" *ngFor="let section of getSections(survey); let i = index"><br />
+                                
+                                <div class="row worker-select">
+                                        <div class="col-xs-3"> <label class="control-label" for="reportedBy">Critical Parameter:</label></div>
+                                        <div class="col-xs-3"><p-dropdown [options]="cities" placeholder="Select a Value" optionLabel="name" [showClear]="true" name="criticalParameter"></p-dropdown> </div>
+                                        <div class="col-xs-3"> <label class="control-label" for="reportedBy">Missing Trending Data Input By:</label></div>
+                                        <div class="col-xs-3"><p-dropdown [options]="cities" placeholder="Select a Value" optionLabel="name" [showClear]="true" name="cP"></p-dropdown></div>
+                                    
+                                    </div>
+                                    <br/>
+                                    <div class="row worker-select">
+                                            <div class="col-xs-3"> <label class="control-label" for="reportedBy">Device:</label>        </div>
+                                          <div class="col-xs-3">
+                                              <app-ddown-new (reporter)="onChange($event)" [fields]="reporters">             </app-ddown-new>
+                                          </div>
+                                    
+                                          <div class="col-xs-3"> <label class="control-label" for="reportedBy">Findings:</label>    </div>
+                                      <div class="col-xs-3">
+                                          <app-ddown-new (reporter)="onChange($event)" [fields]="reporters">    </app-ddown-new>
+                                      </div> 
+                                    </div>
+                                        <br/>
+
+                                        <div class="row worker-select">
+                                                <div class="col-xs-3"><label class="control-label" for="reportedBy">Start Time:</label></div>
+                                                <div class="col-xs-4"><p-calendar [showTime]="true" hourFormat="24" icon="glyphicon glyphicon-time" name="startTime" [showIcon]="true"></p-calendar></div>
+                                                <div class="col-xs-2"><label class="control-label" for="reportedBy">End Time:</label></div>
+                                                <div class="col-xs-3"><p-calendar [showTime]="true" hourFormat="24" name="endTime" [showIcon]="true" icon="glyphicon glyphicon-time"></p-calendar></div>
+                                       </div>   
+                                       <br/> 
+           <div class="row worker-select">
+                <div class="col-xs-3"> <label class="control-label" for="reportedBy">Responsible:</label>        </div>
+              <div class="col-xs-3">
+                  <app-ddown-new (reporter)="onChange($event)" [fields]="reporters">             </app-ddown-new>
+              </div>
+        
+              <div class="col-xs-3"> <label class="control-label" for="reportedBy">Contacted Group:</label>    </div>
+          <div class="col-xs-3">
+              <app-ddown-new (reporter)="onChange($event)" [fields]="reporters">    </app-ddown-new>
+          </div> 
+        </div>      
+                       <br/>
+                       <div class="row worker-select">
+                            <div class="col-xs-3"><label class="control-label" for="reportedBy">If Other:</label></div>
+                            <input type="text" class="form-control" style="width:50%" placeholder="state the reason" />
+             </div><br/>
+             <div class="row worker-select">
+                     <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+             </div><br/>
+             <button (click)="addSection()" class="point">Add Another Missing Trending Data</button> 
+            </div>
+            </div>
+                <div class="form-group text-center">
+                        <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(secthreemtdForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                        <button class="btn btn-outline-rounded btn-info" [disabled]="!secthreemtdForm.valid" (click)="goToNext(secthreemtdForm)">  Save & Continue <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

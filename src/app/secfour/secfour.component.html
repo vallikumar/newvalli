@@ -1,0 +1,41 @@
+<form #secfourForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                <div class="row worker-select">
+                        <button style="float:right;" class="btn btn-outline-rounded btn-default"> 
+                            <span style="margin-right:10px;" class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                </div>
+
+                        <div class="row worker-select">
+                               <label class="control-label" for="reportedBy">a. Status on Pending System Discrepancy / Deviation (SD):    </label><br/>  
+                                <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                        </div><br/>
+                        <div class="row worker-select">
+                                <label class="control-label" for="reportedBy">b. Status on Pending Corrective Action/Preventive Action (CAPA): </label><br/>  
+                                 <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                         </div><br/>
+                         <div class="row worker-select">
+                                <label class="control-label" for="reportedBy">c. Status on Pending Change Request Form (CRF):    </label><br/>  
+                                 <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                         </div><br/><div class="row worker-select">
+                                <label class="control-label" for="reportedBy">d. Status on Pending Root Cause Analysis (RCA):    </label><br/>  
+                                 <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                         </div><br/>
+                         <div class="row worker-select">
+                                <label class="control-label" for="reportedBy">e. Status on Pending Unknown/Unassigned:    </label><br/>  
+                                 <span><textarea style="width:90%; margin: 5px 0 0 20px;" ng-model="myTextarea"></textarea></span>
+                         </div><br/>
+
+                </div>
+            </div>
+               <br/>
+                    
+                <div class="form-group text-center">
+                        <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(secfourForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                        <button class="btn btn-outline-rounded btn-info" [disabled]="!secfourForm.valid" (click)="goToNext(secfourForm)">  Save & Continue <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+</form>
